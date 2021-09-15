@@ -20,4 +20,20 @@ class Solution {
         }
         return [];
     }
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function twoSumOn(array $nums,int $target) {
+        foreach($nums as $key => $value){
+            unset($nums[$key]);
+            $next_key = array_search(($target - (int)$value), $nums);
+            if($next_key){
+                return [$key, $next_key];
+            }
+        }
+        return [];
     }
+}
